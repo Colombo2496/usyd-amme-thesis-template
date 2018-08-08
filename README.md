@@ -10,6 +10,8 @@ USYD AMME honours thesis template
 
 ## Author(s)
 *   Krishna Kumar
+*	Mathew Gardiner (modifications in this fork)
+*   Liam Heidt (provided updated title page and body formatting)
 
 Updated information coming soon, original readme as follows. 
 
