@@ -2,7 +2,7 @@ USYD AMME honours thesis template
 ========================
 
 [![Join the chat at https://gitter.im/kks32/phd-thesis-template](https://badges.gitter.im/kks32/phd-thesis-template.svg)](https://gitter.im/kks32/phd-thesis-template?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-> A LaTeX / XeLaTeX / LuaLaTeX PhD thesis template for the University of Sydney School of Aerospace, Mechanical and Mechatronic Engineering. Modified from the fantastic CUED PhD thesis template by Krishna Kumar. Not at all affiliated with the University of Sydney or School of Aerospace, Mechanical and Mechatronic Engineering, just an unofficial template based on the guidelines in the 2018 "UG Thesis Requirements and Important Dates" documents.
+> A LaTeX / XeLaTeX / LuaLaTeX PhD thesis template for the University of Sydney School of Aerospace, Mechanical and Mechatronic Engineering. Modified from the fantastic CUED PhD thesis template by Krishna Kumar. Not affiliated with the University of Sydney or School of Aerospace, Mechanical and Mechatronic Engineering, just an unofficial template based on the guidelines in the 2018 [UG Thesis Requirements and Important Dates](https://canvas.sydney.edu.au/courses/2806/files/1603078/download?wrap=1) document.
 
 [![Build Status](https://api.travis-ci.org/kks32/phd-thesis-template.svg)](https://travis-ci.org/kks32/phd-thesis-template)
 [![License MIT](http://img.shields.io/badge/license-MIT-brightgreen.svg)](license.md)
@@ -10,7 +10,7 @@ USYD AMME honours thesis template
 
 ## Author(s)
 *   Krishna Kumar
-*	Mathew Gardiner (modifications in this fork)
+*   Mathew Gardiner (modifications in this fork)
 *   Liam Heidt (provided updated title page and body formatting)
 
 Updated information coming soon, original readme as follows. 
