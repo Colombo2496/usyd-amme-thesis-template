@@ -1,0 +1,16 @@
+SET FILENAME=thesis
+
+DEL "%FILENAME%.aux"
+DEL "%FILENAME%.bbl"
+DEL "%FILENAME%.blg"
+DEL "%FILENAME%.d"
+DEL "%FILENAME%.fls"
+DEL "%FILENAME%.ild"
+DEL "%FILENAME%.ind"
+DEL "%FILENAME%.toc"
+DEL "%FILENAME%.lot"
+DEL "%FILENAME%.lof"
+DEL "%FILENAME%.idx"
+DEL "%FILENAME%.out"
+DEL "%FILENAME%.nlo"
+DEL "%FILENAME%.nls"

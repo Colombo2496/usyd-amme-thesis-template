@@ -1,19 +1,20 @@
 % ******************************* PhD Thesis Template **************************
 % Please have a look at the README.md file for info on how to use the template
 
-\documentclass[a4paper,12pt,times,numbered,print,index]{Classes/PhDThesisPSnPDF}
+% For printing: 
+%\documentclass[a4paper,12pt,times,numbered,print]{Classes/PhDThesisPSnPDF}
+
+% For online pdf:
+\documentclass[a4paper,12pt,times,numbered]{Classes/PhDThesisPSnPDF}
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
 % *********************** See README for more details **************************
 % ******************************************************************************
 
-% `a4paper'(The University of Cambridge PhD thesis guidelines recommends a page
-% size a4 - default option) or `a5paper': A5 Paper size is also allowed as per
-% the Cambridge University Engineering Deparment guidelines for PhD thesis
+% `a4paper' or `a5paper': A4 pages are used for a USYD AMME thesis.
 %
-% `11pt' or `12pt'(default): Font Size 10pt is NOT recommended by the University
-% guidelines
+% `11pt' or `12pt'(default): 12pt font should be used for an AMME thesis. 
 %
 % `oneside' or `twoside'(default): Printing double side (twoside) or single
 % side.
@@ -21,7 +22,7 @@
 % `print': Use `print' for print version with appropriate margins and page
 % layout. Leaving the options field blank will activate Online version.
 %
-% `index': For index at the end of the thesis
+% `index': For index at the end of the thesis (not needed for AMME thesis)
 %
 % `draftclassic': For draft mode without loading any images (same as draft in book)
 %
@@ -38,12 +39,13 @@
 %
 % `custommargin`: Use `custommargin' in options to activate custom page margins,
 % which can be defined in the preamble.tex. Custom margin will override
-% print/online margin setup.
+% print/online margin setup. Note that the defaults specified for this class
+% satisfy the AMME requirements (> 3cm left margin, > 2cm right margin), but 
+% custom can still be used. 
 %
 % *********************** Choosing the Fonts in Class Options ******************
 %
-% `times' : Times font with math support. (The Cambridge University guidelines
-% recommend using times)
+% `times' : Times font with math support. 
 %
 % `fourier': Utopia Font with Fourier Math font (Font has to be installed)
 %            It's a free font.
@@ -74,16 +76,18 @@
 %
 % `PageStyleII': Chapter Name on Even Side (Left Even) in Header. Section Number
 % and Section Name in Header on Odd Side (Right Odd). Page numbering in footer
+%
+% These can be customised further from line 730 in Classes\PhDThesisPSnPDF.cls
 
 % Uncomment to change page style
-%\pagestyle{PageStyleII}
+\pagestyle{PageStyleII}
 
 % ********************************** Preamble **********************************
 % Preamble: Contains packages and user-defined commands and settings
 \input{Preamble/preamble}
 
 % ************************ Thesis Information & Meta-data **********************
-% Thesis title and author information, refernce file for biblatex
+% Thesis title and author information, reference file for biblatex
 \input{thesis-info}
 
 % ***************************** Abstract Separate ******************************
@@ -102,11 +106,15 @@
 % Useful option to review a particular chapter or to send it to supervisior.
 % To use choose `chapter' option in the document class
 
+
 \ifdefineChapter
  \includeonly{Chapter3/chapter3}
 \fi
 
+% ***
+
 % ******************************** Front Matter ********************************
+
 \begin{document}
 
 \frontmatter
@@ -149,13 +157,13 @@
 %\backmatter
 
 % ********************************** Bibliography ******************************
-\begin{spacing}{0.9}
+\begin{spacing}{1}
 
 % To use the conventional natbib style referencing
 % Bibliography style previews: http://nodonn.tipido.net/bibstyle.php
 % Reference styles: http://sites.stat.psu.edu/~surajit/present/bib.htm
 
-\bibliographystyle{apalike}
+\bibliographystyle{ieeetr}
 %\bibliographystyle{unsrt} % Use for unsorted references  
 %\bibliographystyle{plainnat} % use this to have URLs listed in References
 \cleardoublepage
@@ -175,10 +183,8 @@
 % ********************************** Appendices ********************************
 
 \begin{appendices} % Using appendices environment for more functunality
-
-\include{Appendix1/appendix1}
-\include{Appendix2/appendix2}
-
+	\include{Appendix1/appendix1}
+	\include{Appendix2/appendix2}
 \end{appendices}
 
 % *************************************** Index ********************************

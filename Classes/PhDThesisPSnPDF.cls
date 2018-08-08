@@ -460,6 +460,8 @@ supported!}
 
 
 
+
+
 % ******************************* Bibliography *********************************
 \ifPHD@authoryear
   \ifPHD@biblatex
@@ -548,6 +550,9 @@ supported!}
     in the class options}
   \RequirePackage{lmodern}
 \fi
+
+
+
 
 
 \ifxetex
@@ -763,8 +768,10 @@ wish to left align your text}
   % Style 1: Sets Page Number at the Top and Chapter/Section Name on LE/RO
   \pagestyle{PageStyleI}
 
+
 \else
   \ifPHD@pageStyleII
+
 
   % Style 2: Sets Page Number at the Bottom with Chapter/Section Name on LO/RE
   \pagestyle{PageStyleII}
@@ -814,6 +821,10 @@ wish to left align your text}
 % These macros are used to declare arguments needed for the
 % construction of the title page and other preamble.
 
+% Command for the author and the title
+\newcommand{\theauthor}{\@author}
+\newcommand{\thetitle}{\@title}
+
 % Subtitle (optional)
 \newcommand{\@subtitle}{}
 \newcommand{\subtitle}[1]{\renewcommand{\@subtitle}{#1}}
@@ -837,6 +848,7 @@ wish to left align your text}
 % The name of your University
 \newcommand{\@university}{}
 \newcommand{\university}[1]{\renewcommand{\@university}{#1}}
+\newcommand{\theuniversity}{\@university}
 
 % Defining the crest
 \newcommand{\@crest}{}
@@ -851,6 +863,7 @@ wish to left align your text}
 \newif\ifPHD@supervisor\PHD@supervisorfalse
 \newcommand{\@supervisor}{}
 \newcommand{\supervisor}[1]{\renewcommand{\@supervisor}{#1}\PHD@supervisortrue}
+\newcommand{\thesupervisor}{\@supervisor}
 
 % Supervisor Title (Supervisor - Default, can be changed)
 \newcommand{\@supervisorrole}{Supervisor: }
@@ -874,7 +887,7 @@ wish to left align your text}
 \newcommand{\advisorlinewidth}[1]{\renewcommand{\@advisorlinewidth}{#1}}
 
 % Submission Text
-\newcommand{\submissiontext}{This dissertation is submitted for the degree of }
+\newcommand{\submissiontext}{A thesis submitted to The University of Sydney in partial fulfilment of the requirements for the degree of Bachelor of Aeronautical (Space) Engineering with Honours}
 
 % keywords (These keywords will appear in the PDF meta-information
 % called `pdfkeywords`.)
@@ -937,6 +950,7 @@ wish to left align your text}
 
 % University Crest Long if college crest is defined
 \ifPHD@collegeshield%
+	\vspace{.5\PHD@titlepagespacing}
 	{\usebox{\PHD@crest}}
 	\vspace{.15\PHD@titlepagespacing}
 \fi
@@ -952,7 +966,7 @@ wish to left align your text}
 	{\usebox{\PHD@collegecrest}}
 	\vspace{.1\PHD@titlepagespacing}
 \else
-	\vspace{.25\PHD@titlepagespacing}
+	\vspace{.0\PHD@titlepagespacing}
 	{\usebox{\PHD@crest}}
 	\vspace{.15\PHD@titlepagespacing}
 \fi
@@ -1006,6 +1020,7 @@ wish to left align your text}
 
 
 
+
 % ******************************* Declaration **********************************
 % The declaration environment puts a large, bold, centered
 % "Declaration" label at the top of the page.
@@ -1015,12 +1030,16 @@ wish to left align your text}
 \setsinglecolumn
 \chapter*{\centering \Large \@declarationtitle}
 \thispagestyle{empty}
-}{
-\flushright
-\@author{}\\
-\@degreedate{}
-\vfill
 }
+
+%{
+%\flushright
+%\@author{}\\
+%\@degreedate{}
+%\vfill
+%}
+
+
 
 
 
@@ -1148,8 +1167,10 @@ wish to left align your text}
 % Title Box
 \newsavebox{\PHD@Title}
 \begin{lrbox}{\PHD@Title}
-  \begin{minipage}[c]{0.98\textwidth}
-    \centering \Huge \bfseries{\@title}
+  \begin{minipage}[l]{1\textwidth}
+  \noindent\makebox[\linewidth]{\rule{500cm}{1.5pt}}
+    \centering \huge \bfseries{\@title \vspace{-0.5em}}
+	\noindent\makebox[\linewidth]{	\vspace{-2em} \rule{500cm}{1.5pt}}
     \ifthenelse{\equal{\@subtitle}{}}{
       % subtitle is not defined
     }{
@@ -1178,7 +1199,7 @@ wish to left align your text}
 \newsavebox{\PHD@author}
 \begin{lrbox}{\PHD@author}
   \begin{minipage}[c]{\textwidth}
-    \centering \Large \bfseries{\@author}
+    \centering \LARGE \bfseries{\@author}
       \vspace{0.5em}   
   \end{minipage}
 \end{lrbox}

@@ -2,12 +2,19 @@
 % ****************************** Custom Margin *********************************
 
 % Add `custommargin' in the document class options to use this section
-% Set {innerside margin / outerside margin / topmargin / bottom margin}  and
-% other page dimensions
+% Set {innerside margin (use left or inner) / outerside margin (right or outer) / 
+% topmargin / bottom margin} and other page dimensions
+% Minimum specified in requirements:
 \ifsetCustomMargin
-  \RequirePackage[left=37mm,right=30mm,top=35mm,bottom=30mm]{geometry}
+  \RequirePackage[left=30mm,right=20mm,top=23mm,bottom=18mm]{geometry}
   \setFancyHdr % To apply fancy header after geometry package is loaded
 \fi
+
+% Example with original template
+%\ifsetCustomMargin
+%  \RequirePackage[left=37mm,right=30mm,top=35mm,bottom=30mm]{geometry}
+%  \setFancyHdr % To apply fancy header after geometry package is loaded
+%\fi
 
 % Add spaces between paragraphs
 %\setlength{\parskip}{0.5em}
@@ -73,6 +80,7 @@
 % This is for people stuck with older versions of texlive
 %\usepackage{sty/caption/subcaption}
 \usepackage{subcaption}
+
 
 % ********************************** Tables ************************************
 \usepackage{booktabs} % For professional looking tables
@@ -190,6 +198,13 @@
 
 % Example todo: \mynote{Hey! I have a note}
 
-% *****************************************************************************
+% ******************************** Todo Notes **********************************
 % ******************* Better enumeration my MB*************
+% TODO: Sort this file out with the headings and organised packages etc.
 \usepackage{enumitem}
+
+% Formatting:
+\setlength{\abovedisplayskip}{4pt}
+\setlength{\belowdisplayskip}{4pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{\baselineskip}
