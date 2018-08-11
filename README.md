@@ -2,18 +2,25 @@ USYD AMME honours thesis template
 ========================
 
 [![Join the chat at https://gitter.im/kks32/phd-thesis-template](https://badges.gitter.im/kks32/phd-thesis-template.svg)](https://gitter.im/kks32/phd-thesis-template?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-> A LaTeX / XeLaTeX / LuaLaTeX PhD thesis template for the University of Sydney School of Aerospace, Mechanical and Mechatronic Engineering. Modified from the fantastic CUED PhD thesis template by Krishna Kumar. Not affiliated with the University of Sydney or School of Aerospace, Mechanical and Mechatronic Engineering, just an unofficial template based on the guidelines in the 2018 [UG Thesis Requirements and Important Dates](https://canvas.sydney.edu.au/courses/2806/files/1603078/download?wrap=1) document.
-
+> A LaTeX / XeLaTeX / LuaLaTeX PhD thesis template for the University of Sydney School of Aerospace, Mechanical and Mechatronic Engineering. Modified from the fantastic CUED PhD thesis template by Krishna Kumar. This is an unofficial template not created by or affiliated with The University of Sydney or School of Aerospace, Mechanical and Mechatronic Engineering.
 [![Build Status](https://api.travis-ci.org/kks32/phd-thesis-template.svg)](https://travis-ci.org/kks32/phd-thesis-template)
 [![License MIT](http://img.shields.io/badge/license-MIT-brightgreen.svg)](license.md)
 [![Version](http://img.shields.io/badge/version-2.2-brightgreen.svg)](https://github.com/kks32/phd-thesis-template/releases/latest)
+
+## Information
+
+* This template is based on guidelines in the 2018 [UG Thesis Requirements and Important Dates](https://canvas.sydney.edu.au/courses/2806/files/1603078/download?wrap=1) document. The guidelines are somewhat sparse, so much customisation will be based on personal preferences. 
+* Let me know if there is anything that should be changed or improved, or create a pull request on Github.
+* The following readme was written for the original CUED template, and should be carefully read to see what options are available.
+
+## To be added
+*	Class option for a SIPS thesis with additional sections
+*	Template for new page style formatting
 
 ## Author(s)
 *   Krishna Kumar
 *   Mathew Gardiner (modifications in this fork)
 *   Liam Heidt (provided updated title page and body formatting)
-
-Updated information coming soon, original readme as follows. 
 
 --------------------------------------------------------------------------------
 ## Features
@@ -24,7 +31,7 @@ Updated information coming soon, original readme as follows.
 
 *   Adaptive Title Page: Title page adapts to title length
 
-*   Title page with both College and University crests.
+*   Title page with University crests.
 
 *   Print / On-line version: Different layout and hyper-referencing styles
 
@@ -144,6 +151,13 @@ Usage: `sh ./compile-thesis.sh [OPTIONS] [filename]`
 
 *    Alternatively, double click on `compile-thesis-windows.bat`
 
+### Using TeXstudio or another editor
+
+*	The thesis can be compiled through TeXstudio. A reccomended [build order](https://tex.stackexchange.com/a/216325) to match the scripts is:
+
+	pdflatex -> bibtex -> makeindex x 3 -> pdflatex -> makeindex -> pdflatex
+	
+*	The script `clean-up-windows.bat` will remove unneeded files created during the build process. 
 
 -------------------------------------------------------------------------------
 
@@ -161,7 +175,7 @@ It supports the following custom options in the documentclass in thesis.tex:
 
 *   `a4paper` (default as per the University guidelines) or `a5paper`: Paper size
 
-*   `11pt` or `12pt`: The University of Cambridge guidelines recommend using a minimum font size of 11pt (12pt is preferred) and 10pt for footnotes. This template also supports `10pt`.
+*   `11pt` or `12pt`: 12pt font should be used for an AMME thesis. This template also supports `10pt`.
 
 *   `oneside` or `twoside` (default): This is especially useful for printing double side (twoside) or single side.
 
@@ -178,6 +192,8 @@ It supports the following custom options in the documentclass in thesis.tex:
     `\setFancyHdr` should be called when using custom margins for proper header/footer dimensions
 
     `\ifsetMargin` is deprecated, please use `\ifsetCustomMargin` instead.
+	
+	Note that the defaults specified for this class satisfy the AMME requirements (> 3cm left margin, > 2cm right margin), but custom margins can still be added. 
 
 *   `index`: Including this option builds the index, which is placed at the end of the thesis.
 
@@ -203,24 +219,11 @@ It supports the following custom options in the documentclass in thesis.tex:
 The front page (title page) resizes to fit your title length. You can modify the options in `thesis-info.tex`.
 
 * `\subtitle` (optional): Adds a subtitle to your thesis.
-
-* `\college` (optional): This option adds the name of your college on the bottom left.
-
-If `\college` is defined, the bottom of the title page will look like this:
-
-        King's College 			                                         2014
-
-If `\college` is undefined or blank, the `degreedate` will be centered.
-
-                                        2014
-
-The template offers support to having both the college and university crests or just one of the crests.
-
-* `\collegeshield` (optional): Includes college crest in addition to the university crest. This reformats the front page layout.
+* `\crest`: The USYD logo has not been included in the public repo, and should be added in the `Figs` folder and the file name updated in `thesis-info.tex`
 
 ### Abstract separate
 
-*  A separate abstract with the title of the PhD and the candidate name has to be submitted to the Student Registry. This can be generated using `abstract` option in the document class. Ignore subsequent warnings about skipping sections (if any).
+*  A separate abstract can be generated using `abstract` option in the document class. Ignore subsequent warnings about skipping sections (if any).
 
 *  To generate the separate abstract and the title page, make sure the following commands are in the preamble section of `thesis.tex` file:
 
@@ -264,7 +267,7 @@ the bottom of the page. Pagewise line numbering is added on every page. `draft` 
 
 `PhDThesisPSnPDF` currently supports three fonts `Times`, `Fourier` and `Latin Modern (default)`.
 
-*   `times`: (The University of Cambridge guidelines recommend using Times). Specifying times option in the document class will use `mathptpx` or `Times` font with Math Support.
+*   `times`: Specifying times option in the document class will use `mathptpx` or `Times` font with Math Support.
 *   `fourier`: fourier font with math support
 *   `default (empty)`: When no font is specified, `Latin Modern` is used as the default font with Math Support.
 *   `customfont`: Any custom font can be set in preamble by using `customfont` option in the document class. Then the custom font can be loaded in preamble.tex in the line:
@@ -275,7 +278,7 @@ the bottom of the page. Pagewise line numbering is added on every page. `draft` 
 
 ### Choosing the bibliography style
 
-`PhDThesisPSnPDF` currently supports two styles `authoryear` and `numbered (default)`. Citation style has to be set. You can also specify `custombib` style and customise the bibliography.
+`PhDThesisPSnPDF` currently supports two styles `authoryear` and `numbered (default)`. Citation style has been set to ieeetr. You can also specify `custombib` style and customise the bibliography.
 
 * `authoryear`: For author-year citation eg., Krishna (2013)
 
@@ -317,6 +320,13 @@ the bottom of the page. Pagewise line numbering is added on every page. `draft` 
 
         Footer[centered]:                           	3
 
+### Paragraph formatting		
+		
+The template has been modified to use no paragraph indents and a blank line between paragraphs. To change this or return to the original formatting (no space between paragraphs, first line indented) edit or comment the following in `preamble.tex`:
+
+		\setlength{\parindent}{0pt}
+		\setlength{\parskip}{\baselineskip}
+		
 ### Changing the visual style of chapter headings
 
 The visual style of chapter headings can be modified using the `titlesec` package. Edit the following lines in the `preamble.tex` file.
@@ -535,7 +545,12 @@ This is controlled by the bibliography style. Please use `\bibliographystyle{uns
 
 ## ChangeLog
 
-The history of releases can be viewed at [ChangeLog](ChangeLog.md)
+*	Updated comments and default options in `thesis.tex`, `preamble.tex` and `thesis-info.tex` to match USYD AMME guidelines. 
+*	Added example declaration in `declaration.tex` and updated class file for declaration.
+*	Modified title page formatting
+*	Changed default bibliography file
+
+The history of releases for the original project can be viewed at [ChangeLog](ChangeLog.md)
 
 
 --------------------------------------------------------------------------------
