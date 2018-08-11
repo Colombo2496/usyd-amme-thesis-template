@@ -188,13 +188,13 @@
 % ******************************** Todo Notes **********************************
 %% Uncomment the following lines to have todonotes.
 
-%\ifsetDraft
-%	\usepackage[colorinlistoftodos]{todonotes}
-%	\newcommand{\mynote}[1]{\todo[author=kks32,size=\small,inline,color=green!40]{#1}}
-%\else
-%	\newcommand{\mynote}[1]{}
-%	\newcommand{\listoftodos}{}
-%\fi
+\ifsetDraft
+	\usepackage[colorinlistoftodos]{todonotes}
+	\newcommand{\mynote}[1]{\todo[author=kks32,size=\small,inline,color=green!40]{#1}}
+\else
+	\newcommand{\mynote}[1]{}
+	\newcommand{\listoftodos}{}
+\fi
 
 % Example todo: \mynote{Hey! I have a note}
 
@@ -208,3 +208,18 @@
 \setlength{\belowdisplayskip}{4pt}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{\baselineskip}
+
+% Add these or use what Liam had:
+\RequirePackage{titlesec}]
+\usepackage[titletoc]{appendix}
+\usepackage{titlesec}
+% \newcommand{\PreContentTitleFormat}{\titleformat{\chapter}[display]{\scshape\Large}
+% {\Large\filleft{\chaptertitlename} \Huge\thechapter}
+% {1ex}{}
+% [\vspace{1ex}\titlerule]}
+% \newcommand{\ContentTitleFormat}{\titleformat{\chapter}[display]{\scshape\huge}
+% {\Large\filleft{\chaptertitlename} \Huge\thechapter}{1ex}
+% {\titlerule\vspace{1ex}\filright}
+% [\vspace{1ex}\titlerule]}
+% \newcommand{\PostContentTitleFormat}{\PreContentTitleFormat}
+% \PreContentTitleFormat
