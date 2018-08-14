@@ -144,6 +144,18 @@
 \newif\ifsetMargin\setMarginfalse % Set Custom Margin
 \DeclareOption{custommargin}{\setCustomMargintrue}
 
+% ******************************* SIPS Thesis  *********************************
+
+\newif \ifSipsThesis\SipsThesisfalse % To enable SIPS thesis
+
+\newif \ifPHD@sips\PHD@sipsfalse % Enable SIPS thesis
+\DeclareOption{sips}{
+	\PHD@sipstrue
+  \ClassWarning{PhDThesisPSnPDF}{You have chosen an option that adds in additional
+    chapters for a SIPS thesis, if this was intentional, ignore this warning. Congratulations on getting an industry placement! Hope having to write a chapter
+	on WHS isn't too painful! If not, please remove the pption `abstract' from the document class and recompile. Good luck with your writing!}
+}
+
 % **************************** Separate Abstract  ******************************
 \newif \ifdefineAbstract\defineAbstractfalse %To enable Separate abstract
 
@@ -908,6 +920,9 @@ wish to left align your text}
 % Abstract title text
 \newcommand{\@abstracttitle}{Abstract}
 
+% Executive summary title text
+\newcommand{\@executivetitle}{Executive Summary}
+
 % Names for the nomenclature groups
 \newcommand{\@nomenclatureromans}{Roman Symbols}
 \newcommand{\@nomenclaturegreeks}{Greek Symbols}
@@ -1098,6 +1113,21 @@ wish to left align your text}
     \newcommand{\printthesisindex}{}
 \fi
 
+% ****************************** SIPS Thesis ***********************************
+% A thesis for SIPS will also include an executive summary and a section on
+% practical experience reporting.
+
+\ifPHD@sips
+	\SipsThesistrue
+\fi
+
+\newenvironment{executive} {
+\cleardoublepage
+\setsinglecolumn
+\chapter*{\centering \Large \@executivetitle}
+\thispagestyle{empty}
+}
+
 % ***************************** Chapter Mode ***********************************
 % The chapter mode allows user to only print particular chapters with references
 % All other options are disabled by default
@@ -1148,11 +1178,20 @@ wish to left align your text}
     {{\large \vspace*{1em} \@author} \par}
   \end{center}
 \else
-% Normal abstract in the thesis
-  \cleardoublepage
-  \setsinglecolumn
-  \chapter*{\centering \Large \@abstracttitle}
-  \thispagestyle{empty}
+	\ifPHD@sips
+	  \thispagestyle{empty}
+	  \setsinglecolumn
+	  \begin{center}
+		{ \Large {\bfseries {\@title}} \par}
+		{{\large \vspace*{1em} \@author} \par}
+	  \end{center}
+	\else
+	% Normal abstract in the thesis
+	  \cleardoublepage
+	  \setsinglecolumn
+	  \chapter*{\centering \Large \@abstracttitle}
+	  \thispagestyle{empty}
+	\fi
 \fi
 }
 

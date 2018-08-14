@@ -14,7 +14,6 @@ USYD AMME honours thesis template
 * The following readme was written for the original CUED template, and should be carefully read to see what options are available.
 
 ## To be added
-*	Class option for a SIPS thesis with additional sections
 *	Template for new page style formatting
 
 ## Author(s)
@@ -201,6 +200,8 @@ It supports the following custom options in the documentclass in thesis.tex:
 
     _Note_: the package `makeidx` is used to create the index.
 
+*	`sips': Add this option for a SIPS thesis, including an executive summary and practical experience reporting appendix chapter.	
+	
 *   `abstract`: This option enables only the thesis title page and the abstract with title and author to be printed.
 
 *   `chapter`: This option enables only the specified chapter and it's references. Useful for review and corrections.
