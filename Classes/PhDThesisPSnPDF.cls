@@ -887,7 +887,7 @@ wish to left align your text}
 \newcommand{\advisorlinewidth}[1]{\renewcommand{\@advisorlinewidth}{#1}}
 
 % Submission Text
-\newcommand{\submissiontext}{A thesis submitted to The University of Sydney in partial fulfilment of the requirements for the degree of Bachelor of Aeronautical (Space) Engineering with Honours}
+\newcommand{\submissiontext}{A thesis submitted to The University of Sydney in partial fulfilment of the requirements for the degree of }
 
 % keywords (These keywords will appear in the PDF meta-information
 % called `pdfkeywords`.)
@@ -1254,8 +1254,8 @@ wish to left align your text}
 \begin{lrbox}{\PHD@submission}
   \begin{minipage}[c]{\textwidth}
     \begin{center}
-      \large \submissiontext \par
-      \large \textit {\@degreetitle} \par
+      \submissiontext \,
+      \textit {\@degreetitle} \par
     \end{center}
   \end{minipage}
 \end{lrbox}
