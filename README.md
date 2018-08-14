@@ -3,6 +3,7 @@ USYD AMME honours thesis template
 
 [![Join the chat at https://gitter.im/kks32/phd-thesis-template](https://badges.gitter.im/kks32/phd-thesis-template.svg)](https://gitter.im/kks32/phd-thesis-template?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 > A LaTeX / XeLaTeX / LuaLaTeX PhD thesis template for the University of Sydney School of Aerospace, Mechanical and Mechatronic Engineering. Modified from the fantastic CUED PhD thesis template by Krishna Kumar. This is an unofficial template not created by or affiliated with The University of Sydney or School of Aerospace, Mechanical and Mechatronic Engineering.
+
 [![Build Status](https://api.travis-ci.org/kks32/phd-thesis-template.svg)](https://travis-ci.org/kks32/phd-thesis-template)
 [![License MIT](http://img.shields.io/badge/license-MIT-brightgreen.svg)](license.md)
 [![Version](http://img.shields.io/badge/version-2.2-brightgreen.svg)](https://github.com/kks32/phd-thesis-template/releases/latest)
