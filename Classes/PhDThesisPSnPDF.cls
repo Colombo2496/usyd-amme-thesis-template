@@ -1254,7 +1254,7 @@ wish to left align your text}
 \begin{lrbox}{\PHD@submission}
   \begin{minipage}[c]{\textwidth}
     \begin{center}
-      \submissiontext \,
+      \submissiontext
       \textit {\@degreetitle} \par
     \end{center}
   \end{minipage}
