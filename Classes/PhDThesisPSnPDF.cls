@@ -152,8 +152,11 @@
 \DeclareOption{sips}{
 	\PHD@sipstrue
   \ClassWarning{PhDThesisPSnPDF}{You have chosen an option that adds in additional
-    chapters for a SIPS thesis, if this was intentional, ignore this warning. Congratulations on getting an industry placement! Hope having to write a chapter
-	on WHS isn't too painful! If not, please remove the pption `abstract' from the document class and recompile. Good luck with your writing!}
+    chapters for a SIPS thesis, if this was intentional, ignore this warning. 
+    Congratulations on getting an industry placement! Hope having to write a 
+    chapter on WHS isn't too painful! If not, please remove the option 
+    `sips' from the document class and recompile. Good luck with your 
+    writing!}
 }
 
 % **************************** Separate Abstract  ******************************
