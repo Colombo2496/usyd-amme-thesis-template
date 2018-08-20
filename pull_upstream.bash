@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # 1. Follow steps in pull_upstream.md
 
 # 2. It is a good idea to delete the thesis.pdf first as binary files can't
@@ -12,3 +14,5 @@ cp -r . "$dir$(date +"%F_%H-%M-%S")"
 
 # 4. Do a pull and resolve conflicts if nessecary
 git pull template master
+
+# If anyone knows a better way of doing this let me know!
