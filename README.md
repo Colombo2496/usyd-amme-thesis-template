@@ -13,6 +13,7 @@ USYD AMME honours thesis template
 * This template is based on guidelines in the 2018 [UG Thesis Requirements and Important Dates](https://canvas.sydney.edu.au/courses/2806/files/1603078/download?wrap=1) document. The guidelines are somewhat sparse, so much customisation will be based on personal preferences. 
 * Let me know if there is anything that should be changed or improved, or create a pull request on Github.
 * The following readme was written for the original CUED template, and should be carefully read to see what options are available.
+* USYD provides access to GitHub private repos. If you wish to write your thesis in a private Git and still pull template updates instructions are included in [`pull_upstream.md`](pull_upstream.md)
 
 ## To be added
 *	Template for new page style formatting
@@ -34,6 +35,8 @@ USYD AMME honours thesis template
 *   Title page with University crests.
 
 *   Print / On-line version: Different layout and hyper-referencing styles
+
+*   Option for a SIPS thesis which accomodates the additional requriements
 
 *   Pre-defined and custom fonts (Times / Fourier / Latin Modern) with math support
 
@@ -551,6 +554,7 @@ This is controlled by the bibliography style. Please use `\bibliographystyle{uns
 *	Added example declaration in `declaration.tex` and updated class file for declaration.
 *	Modified title page formatting
 *	Changed default bibliography file
+*	Added a SIPS thesis class option
 
 The history of releases for the original project can be viewed at [ChangeLog](ChangeLog.md)
 
