@@ -46,6 +46,6 @@ For the USYD thesis template the bash commands (use Git Bash or WSL) are:
    
   7. To pull changes from the template, you can run:
 	 ```bash
-	 bash pull_upstream.sh
+	 bash pull_upstream.bash
 	 ```
-	 after making the changes and following the steps outlined in the file. You may have to resolve conflicts. 
+	 after making the changes and following the steps outlined in the [file](pull_upstream.bash). You may have to resolve conflicts. 
