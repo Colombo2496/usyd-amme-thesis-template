@@ -208,13 +208,16 @@
 % ******************************** Todo Notes **********************************
 %% Uncomment the following lines to have todonotes.
 
+\makeatletter
 \ifsetDraft
 	\usepackage[colorinlistoftodos]{todonotes}
 	\newcommand{\mynote}[1]{\todo[author=kks32,size=\small,inline,color=green!40]{#1}}
 \else
 	\newcommand{\mynote}[1]{}
 	\newcommand{\listoftodos}{}
+	\providecommand{\@LN}[2]{}
 \fi
+\makeatother
 
 % Example todo: \mynote{Hey! I have a note}
 
