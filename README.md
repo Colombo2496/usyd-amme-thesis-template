@@ -378,19 +378,29 @@ The visual style of chapter headings can be modified using the `titlesec` packag
 
 * To use nomenclature in your chapters:
 
-        \nomenclature[g-pi]{$\pi$}{ $\simeq 3.14\ldots$}
+        \nomenclature[r-J]{$J$}{Cost function}
+	
+	Or to define constants with units and values:
+	
+		\constant{pi}{$\pi$}{The circle number}{3.00}{m}
+		
+	The first argument (J or pi) is the sort key, and will be how the entries are sorted in the list of nomenclature.	
 
     The sort keys have prefix. In this case a prefix of `g` is used to denote Greek Symbols, followed by `-pi` or `-sort_key`. Use a `-` to separate sort key from the prefixes. The standard prefixes defined in this class are:
 
-    * `A` or `a`: Roman Symbols
+	* `C` or `c`: Constants
+	
+	* `O` or `o`: Operators
+	
+	* `A` or `a`: Acronyms/Abbreviations
 
     * `G` or `g`: Greek Symbols
 
-    * `Z` or `z`: Acronyms/Abbreviations
+    * `S` or `s`: Superscripts
 
-    * `R` or `r`: Superscripts
+    * `R` or `r`: Roman symbols
 
-    * `S` or `s`: Subscripts
+    * `Z` or `z`: Subscripts
 
     * `X` or `x`: Other Symbols
 

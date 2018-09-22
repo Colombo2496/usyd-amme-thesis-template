@@ -927,6 +927,8 @@ wish to left align your text}
 \newcommand{\@executivetitle}{Executive Summary}
 
 % Names for the nomenclature groups
+\newcommand{\@nomenclatureoperators}{Operators}
+\newcommand{\@nomenclatureconstants}{Constants}
 \newcommand{\@nomenclatureromans}{Roman Symbols}
 \newcommand{\@nomenclaturegreeks}{Greek Symbols}
 \newcommand{\@nomenclatureacronyms}{Acronyms / Abbreviations}
@@ -1075,25 +1077,45 @@ wish to left align your text}
 
 
 % ******************************* Nomenclature *********************************
+
 \RequirePackage[intoc]{nomencl}
+\RequirePackage{ragged2e}
+\RequirePackage{etoolbox}
 \makenomenclature
 \renewcommand{\nomgroup}[1]{%
-\ifthenelse{\equal{#1}{A}}{\item[\textbf{\@nomenclatureromans}]}{% 
-\ifthenelse{\equal{#1}{G}}{\item[\textbf{\@nomenclaturegreeks}]}{%
-\ifthenelse{\equal{#1}{Z}}{\item[\textbf{\@nomenclatureacronyms}]}{%
-\ifthenelse{\equal{#1}{R}}{\item[\textbf{\@nomenclaturesuperscripts}]}{%
-\ifthenelse{\equal{#1}{S}}{\item[\textbf{\@nomenclaturesubscripts}]}{%
-\ifthenelse{\equal{#1}{X}}{\item[\textbf{\@nomenclatureothers}]}
+\ifthenelse{\equal{#1}{C}}{\item[\large\textbf{\@nomenclatureconstants}]%
+	\item[\bfseries Symbol]%
+	\textbf{Description}\DimensUnits{\textbf{Value}}{\textbf{Units}}}{% 
+\ifthenelse{\equal{#1}{O}}{\item[\large\textbf{\@nomenclatureoperators}]}{% 
+\ifthenelse{\equal{#1}{R}}{\item[\large\textbf{\@nomenclatureromans}]}{% 
+\ifthenelse{\equal{#1}{G}}{\item[\large\textbf{\@nomenclaturegreeks}]}{%
+\ifthenelse{\equal{#1}{A}}{\item[\large\textbf{\@nomenclatureacronyms}]}{%
+\ifthenelse{\equal{#1}{S}}{\item[\large\textbf{\@nomenclaturesuperscripts}]}{%
+\ifthenelse{\equal{#1}{Z}}{\item[\large\textbf{\@nomenclaturesubscripts}]}{%
+\ifthenelse{\equal{#1}{X}}{\item[\large\textbf{\@nomenclatureothers}]}
 {}
-}% matches mathematical symbols > X
-}% matches Subscripts           > S
-}% matches Superscripts         > R
-}% matches Abbreviations        > Z
+}% matches Mathematical symbols > X
+}% matches Subscripts           > Z
+}% matches Superscripts         > S
+}% matches Abbreviations        > A
 }% matches Greek Symbols        > G
-}% matches Roman Symbols        > A
+}% matches Roman Symbols        > R
+}% matches Operators            > O
+}% matches Constants            > C
+
 
 % To add nomenclature in the header
 \renewcommand{\nompreamble}{\markboth{\nomname}{\nomname}}
+
+% For the constant nomgroup
+\newcommand{\DimensUnits}[2]{\hfill\makebox[8em]{#1\hfill}%
+	\makebox[4em]{#2\hfill}\ignorespaces}
+\newcommand{\nomdescr}[1]{\parbox[t]{4cm}{\RaggedRight #1}}
+
+% Constant
+\newcommand{\constant}[5][]{\nomenclature[C-#1]{#2}{%
+	\nomdescr{#3}\DimensUnits{#4}{#5}}}
+
 
 % Add nomenclature to contents and print out nomenclature
 \newcommand{\printnomencl}[1][]{
