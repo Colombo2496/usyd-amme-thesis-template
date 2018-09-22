@@ -17,4 +17,6 @@ DEL "%FILENAME%.nls"
 DEL "%FILENAME%.ilg"
 DEL "%FILENAME%.tdo"
 DEL "%FILENAME%.log"
+DEL "%FILENAME%.synctex.gz"
+DEL "%FILENAME%.loopt"
 del /S *.aux
