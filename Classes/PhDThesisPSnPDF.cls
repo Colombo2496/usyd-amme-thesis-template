@@ -1166,7 +1166,7 @@ wish to left align your text}
     \renewcommand{\tableofcontents}{}
     \renewcommand{\listoffigures}{}
     \renewcommand{\listoftables}{}
-    \renewcommand{\printnomencl}{}
+    \renewcommand{\printnomencl}[1][]{}
     \renewcommand{\printthesisindex}{}
 \else
     \defineChapterfalse
