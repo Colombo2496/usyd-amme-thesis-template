@@ -382,7 +382,7 @@ The visual style of chapter headings can be modified using the `titlesec` packag
 	
 	Or to define constants with units and values:
 	
-		\constant{pi}{$\pi$}{The circle number}{3.00}{m}
+		\constant[c-pi]{$\pi$}{The circle number}{3.00}{m}
 		
 	The first argument (J or pi) is the sort key, and will be how the entries are sorted in the list of nomenclature.	
 
