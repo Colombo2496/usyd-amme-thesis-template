@@ -1,11 +1,11 @@
 % ******************************* PhD Thesis Template **************************
 % Please have a look at the README.md file for info on how to use the template
 
-% For printing: 
-\documentclass[a4paper,12pt,times,numbered,print,oneside]{Classes/PhDThesisPSnPDF}
+% For printing:
+\documentclass[a4paper,12pt,times,numbered,print,oneside]{PhDThesisPSnPDF}
 
 % For online pdf:
-%\documentclass[a4paper,12pt,times,numbered]{Classes/PhDThesisPSnPDF}
+%\documentclass[a4paper,12pt,times,numbered]{PhDThesisPSnPDF}
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
@@ -14,7 +14,7 @@
 
 % `a4paper' or `a5paper': A4 pages are used for a USYD AMME thesis.
 %
-% `11pt' or `12pt'(default): 12pt font should be used for an AMME thesis. 
+% `11pt' or `12pt'(default): 12pt font should be used for an AMME thesis.
 %
 % `oneside' or `twoside'(default): Printing double side (twoside) or single
 % side.
@@ -43,12 +43,12 @@
 % `custommargin`: Use `custommargin' in options to activate custom page margins,
 % which can be defined in the preamble.tex. Custom margin will override
 % print/online margin setup. Note that the defaults specified for this class
-% satisfy the AMME requirements (> 3cm left margin, > 2cm right margin), but 
-% custom margins can still be added. 
+% satisfy the AMME requirements (> 3cm left margin, > 2cm right margin), but
+% custom margins can still be added.
 %
 % *********************** Choosing the Fonts in Class Options ******************
 %
-% `times' : Times font with math support. 
+% `times' : Times font with math support.
 %
 % `fourier': Utopia Font with Fourier Math font (Font has to be installed)
 %            It's a free font.
@@ -108,7 +108,7 @@
 % Title, Contents, Frontmatter are disabled by default
 % Useful option to review a particular chapter or to send it to supervisior.
 % To use choose `chapter' option in the document class
-% Multiple chapters can be listed. To hide Todo notes or add table of contents 
+% Multiple chapters can be listed. To hide Todo notes or add table of contents
 % or figures, edit Preable/todo.tex
 
 
@@ -129,15 +129,15 @@
 
 \maketitle
 
-% A dedication is often not included, uncommment and delete folder 
+% A dedication is often not included, uncommment and delete folder
 % if not needed
-\include{Dedication/dedication}					
+\include{Dedication/dedication}
 \include{Declaration/declaration}
 \include{Acknowledgement/acknowledgement}
 \include{Abstract/abstract}
 
 % An additional executive summary is only needed for a SIPS theis. Can be deleted
-% if not nessecary. 
+% if not nessecary.
 % TODO: Check if we need to have an abstract with title/author info for SIPS
 \ifSipsThesis
 	\include{Executive/executive}
@@ -183,7 +183,7 @@
 % Reference styles: http://sites.stat.psu.edu/~surajit/present/bib.htm
 
 \bibliographystyle{ieeetr}
-%\bibliographystyle{unsrt} % Use for unsorted references  
+%\bibliographystyle{unsrt} % Use for unsorted references
 %\bibliographystyle{plainnat} % use this to have URLs listed in References
 \cleardoublepage
 \bibliography{References/references} % Path to your References.bib file
@@ -204,7 +204,7 @@
 \begin{appendices} % Using appendices environment for more functunality
 	\include{Appendix1/appendix1}
 	\include{Appendix2/appendix2}
-	
+
 	% Can be deleted if not a SIPS thesis
 	\ifSipsThesis
 		\include{PracticalExperience/PracticalExperience}

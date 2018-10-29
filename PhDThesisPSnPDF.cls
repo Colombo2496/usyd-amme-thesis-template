@@ -982,7 +982,7 @@ wish to left align your text}
 % Crest
 
 \ifPHD@collegeshield%
-	\vspace{.15\PHD@titlepagespacing}
+	\vspace{.1\PHD@titlepagespacing}
 	{\usebox{\PHD@collegecrest}}
 	\vspace{.1\PHD@titlepagespacing}
 \else
@@ -995,23 +995,23 @@ wish to left align your text}
 
 % Author
 {\usebox{\PHD@author}}
-\vspace*{1em}
+\vspace*{0.8em}
 
 % Supervisor
 \ifPHD@supervisor%
 {\usebox{\PHD@supervisor}}
-\vspace*{0.5em}
+\vspace*{-1em}
 \fi
 
 % Advisor
 \ifPHD@advisor%
 {\usebox{\PHD@advisor}}
-\vspace*{0.5em}
+\vspace*{0em}
 \fi
 
 % Department and University
 {\usebox{\PHD@dept}}
-\vspace{.2\PHD@titlepagespacing}
+\vspace{.1\PHD@titlepagespacing}
 
 % Submission Text
 {\usebox{\PHD@submission}}
@@ -1024,6 +1024,75 @@ wish to left align your text}
 
 \end{singlespace}
 }
+
+% Original title page definition
+%% ******************************** Title Page **********************************
+%\renewcommand{\maketitle}{
+%
+%% To compute the free vertical space in Title page
+%\computeTitlePageSpacing
+%
+%\thispagestyle{empty}
+%
+%\begin{singlespace}
+%\begin{center}
+%
+%% University Crest Long if college crest is defined
+%\ifPHD@collegeshield%
+%	\vspace{.5\PHD@titlepagespacing}
+%	{\usebox{\PHD@crest}}
+%	\vspace{.15\PHD@titlepagespacing}
+%\fi
+%
+%% Title
+%{\usebox{\PHD@Title}} % subtitle is defined
+%
+%
+%% Crest
+%
+%\ifPHD@collegeshield%
+%	\vspace{.15\PHD@titlepagespacing}
+%	{\usebox{\PHD@collegecrest}}
+%	\vspace{.1\PHD@titlepagespacing}
+%\else
+%	\vspace{.0\PHD@titlepagespacing}
+%	{\usebox{\PHD@crest}}
+%	\vspace{.15\PHD@titlepagespacing}
+%\fi
+%
+%
+%
+%% Author
+%{\usebox{\PHD@author}}
+%\vspace*{1em}
+%
+%% Supervisor
+%\ifPHD@supervisor%
+%{\usebox{\PHD@supervisor}}
+%\vspace*{0.5em}
+%\fi
+%
+%% Advisor
+%\ifPHD@advisor%
+%{\usebox{\PHD@advisor}}
+%\vspace*{0.5em}
+%\fi
+%
+%% Department and University
+%{\usebox{\PHD@dept}}
+%\vspace{.2\PHD@titlepagespacing}
+%
+%% Submission Text
+%{\usebox{\PHD@submission}}
+%
+%% College and degree date
+%\vfill
+%{\usebox{\PHD@collegedate}}
+%    
+%\end{center}
+%
+%\end{singlespace}
+%}
 
 % ********************************* Dedication *********************************
 % The dedication environment makes sure the dedication gets its
