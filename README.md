@@ -571,11 +571,12 @@ This is controlled by the bibliography style. Please use `\bibliographystyle{uns
 
 ## ChangeLog
 
-*	Updated comments and default options in `thesis.tex`, `preamble.tex` and `thesis-info.tex` to match USYD AMME guidelines. 
+*	Updated comments and default options in `thesis.tex`, `preamble.tex` and `thesis-info.tex` to match USYD AMME guidelines.
 *	Added example declaration in `declaration.tex` and updated class file for declaration.
-*	Modified title page formatting
-*	Changed default bibliography file
-*	Added a SIPS thesis class option
+*	Modified title page formatting.
+*	Changed default bibliography file.
+*	Added a SIPS thesis class option.
+*	Added abililty to selectively choose todo notes, nomenclature, lists of figures/tables etc. to be shown in chapter mode.
 
 The history of releases for the original project can be viewed at [ChangeLog](ChangeLog.md)
 

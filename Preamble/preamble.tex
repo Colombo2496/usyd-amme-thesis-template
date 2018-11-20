@@ -210,14 +210,18 @@
 
 
 % ******************************** Todo Notes **********************************
-%% Uncomment the following lines to have todonotes.
+% Uncomment the following lines to have todonotes.
+% You can have multiple notes (uncomment \othernote line), e.g. to write notes 
+% directed at your supervisor.
 
 \makeatletter
 \ifsetDraft
 	\usepackage[colorinlistoftodos]{todonotes}
-	\newcommand{\mynote}[1]{\todo[author=kks32,size=\small,inline,color=green!40]{#1}}
+	\newcommand{\mynote}[1]{\todo[size=\small,author=AB,inline,color=green!40]{#1}}
+	% \newcommand{\othernote}[1]{\todo[size=\small,inline,author=CD,color=blue!40]{#1}}
 \else
-	\newcommand{\mynote}[1]{}
+	% \newcommand{\mynote}[1]{}
+	% \newcommand{\othernote}[1]{}
 	\newcommand{\listoftodos}{}
 	\providecommand{\@LN}[2]{}
 \fi

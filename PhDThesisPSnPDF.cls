@@ -1225,18 +1225,10 @@ wish to left align your text}
 % ***************************** Chapter Mode ***********************************
 % The chapter mode allows user to only print particular chapters with references
 % All other options are disabled by default
-% To include only specific chapters without TOC, LOF, Title and Front Matter
 % To send it to supervisior for changes
 
 \ifPHD@chapter
     \defineChaptertrue
-    % Disable the table of contents, figures, tables, index and nomenclature
-    \renewcommand{\maketitle}{}
-    \renewcommand{\tableofcontents}{}
-    \renewcommand{\listoffigures}{}
-    \renewcommand{\listoftables}{}
-    \renewcommand{\printnomencl}[1][]{}
-    \renewcommand{\printthesisindex}{}
 \else
     \defineChapterfalse
 \fi
